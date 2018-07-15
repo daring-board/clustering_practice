@@ -1,1 +1,5 @@
 *pynb_checkpoints/*
+*/html/*
+*build/*
+*.csv
+*.png
