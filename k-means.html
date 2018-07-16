@@ -38,6 +38,7 @@
 <li><a class="reference internal" href="#">KMeans</a><ul>
 <li><a class="reference internal" href="#id1">アルゴリズム</a></li>
 <li><a class="reference internal" href="#id2">例</a></li>
+<li><a class="reference internal" href="#id3">数式表現</a></li>
 </ul>
 </li>
 </ul>
@@ -89,7 +90,7 @@
 <blockquote>
 <div><p>KMeansのアルゴリズムは以下である。</p>
 <ol class="arabic simple">
-<li>データが含まれる空間にランダムにk個の点(セントロイド)を置くき、それぞれのクラスタの中心とする</li>
+<li>データが含まれる空間にランダムにk個の点(セントロイド)を置き、それぞれのクラスタの中心とする</li>
 <li>各データがセントロイドのうちどれに最も近いかを計算して、そのデータが所属するクラスタとする</li>
 <li>セントロイドの位置をそのクラスタに含まれるデータの重心になるように移動する</li>
 <li>各セントロイドの位置が変わらなくなるまで2, 3を繰り返す</li>
@@ -103,6 +104,19 @@
 <div class="line">PythonによるKMeansの適用例。</div>
 <div class="line"><a class="reference external" href="https://github.com/daring-board/clustering_practice/blob/master/KMeans.ipynb">https://github.com/daring-board/clustering_practice/blob/master/KMeans.ipynb</a></div>
 </div>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>数式表現<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">以下に、KMmeansアルゴリズムの数式表現を示す。</div>
+<div class="line"><span class="math notranslate nohighlight">\(x\)</span> : 入力データ</div>
+<div class="line"><span class="math notranslate nohighlight">\(y\)</span> : クラスタラベル</div>
+<div class="line"><span class="math notranslate nohighlight">\(\theta = \{ \mu_j | j \in [K] \}\)</span> : モデルパラメータ(各クラスタの重心の集合)</div>
+</div>
+<div class="math notranslate nohighlight">
+\[y = f(x; \theta) =  arg min \{ (x - \mu)^2 | \mu \in \theta \}\]</div>
 </div></blockquote>
 </div>
 </div>

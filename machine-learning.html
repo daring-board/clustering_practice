@@ -90,15 +90,15 @@
 <div class="line">『機械にデータを <strong>学習させ</strong> 、データに潜むパターンや特性を発見し、 <strong>予測させる</strong> こと』</div>
 <div class="line">である。</div>
 <div class="line">つまり、機械(学習器)は <strong>学習</strong> と <strong>予測</strong> の2つの処理を行う。</div>
-<div class="line">形式的には下記のような数式で表される <span class="math notranslate nohighlight">\(f\)</span> のパラメータを求める事を <strong>学習</strong> といい、</div>
+<div class="line">形式的には下記のような数式で表される <span class="math notranslate nohighlight">\(f\)</span> のパラメータ <span class="math notranslate nohighlight">\(\theta\)</span> を求める事を <strong>学習</strong> といい、</div>
 <div class="line">未知の入力データ <span class="math notranslate nohighlight">\(x\)</span> に対して、データ <span class="math notranslate nohighlight">\(y\)</span> を出力する事を <strong>予測</strong> という。</div>
 </div>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
-  y = f(x)
+  y = f(x; \theta)
 \end{equation}\]</div>
 <div class="math notranslate nohighlight">
-\[x:入力データ, y:結果データ, f:モデル(学習器)\]</div>
+\[x:入力データ, y:結果データ, f:モデル(学習器), \theta :モデルパラメータ\]</div>
 <div class="line-block">
 <div class="line">機械学習は、教師あり学習と教師なし学習、強化学習の3つに分類される。</div>
 </div>
