@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>KMeans &#8212; clustering_practice  ドキュメント</title>
-    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -19,56 +19,23 @@
     <link rel="search" title="検索" href="search.html" />
     <link rel="prev" title="機械学習" href="machine-learning.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>ナビゲーション</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="総合索引"
-             accesskey="I">索引</a></li>
-        <li class="right" >
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">clustering_practice  ドキュメント</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
           <a href="machine-learning.html" title="機械学習"
-             accesskey="P">前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">clustering_practice  ドキュメント</a> &#187;</li> 
-      </ul>
-    </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">目次</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">KMeans</a><ul>
-<li><a class="reference internal" href="#id1">アルゴリズム</a></li>
-<li><a class="reference internal" href="#id2">例</a></li>
-<li><a class="reference internal" href="#id3">数式表現</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>前のトピックへ</h4>
-  <p class="topless"><a href="machine-learning.html"
-                        title="前の章へ">機械学習</a></p>
-  <div role="note" aria-label="source link">
-    <h3>このページ</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/k-means.rst.txt"
-            rel="nofollow">ソースコードを表示</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>クイック検索</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="検索" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+             accesskey="P">前へ</a> |
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a>
         </div>
-      </div>
+       </div>
+    </div>
 
-    <div class="document">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
@@ -82,13 +49,17 @@
 <div class="line">KMeansはクラスタリングアルゴリズムであり、教師なし学習に分類される。</div>
 <div class="line">クラスタリングアルゴリズムは、階層型クラスタリングと非階層型クラスタリングの</div>
 <div class="line">２種類があり、KMeansは非階層型クラスタリングである。</div>
-<div class="line">これはそれぞれのクラスタと呼ばれるデータ集合間に関連がないということである。</div>
 </div>
 </div></blockquote>
 <div class="section" id="id1">
 <h2>アルゴリズム<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
-<div><p>KMeansのアルゴリズムは以下である。</p>
+<div><div class="line-block">
+<div class="line">KMeansは、各クラスタ内のデータ点とクラスタ内のデータの平均値との距離を最小化することで</div>
+<div class="line">凝集したデータ点の集まりを一つのクラスタとして、分割するアルゴリズムである。</div>
+<div class="line">KMeansでは、クラスタに分割する個数を予め決めておく必要がある。</div>
+<div class="line">アルゴリズムの動作は以下である。</div>
+</div>
 <ol class="arabic simple">
 <li>データが含まれる空間にランダムにk個の点(セントロイド)を置き、それぞれのクラスタの中心とする</li>
 <li>各データがセントロイドのうちどれに最も近いかを計算して、そのデータが所属するクラスタとする</li>
@@ -101,7 +72,7 @@
 <h2>例<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
-<div class="line">PythonによるKMeansの適用例。</div>
+<div class="line">PythonによるKMeansの実行例。</div>
 <div class="line"><a class="reference external" href="https://github.com/daring-board/clustering_practice/blob/master/KMeans.ipynb">https://github.com/daring-board/clustering_practice/blob/master/KMeans.ipynb</a></div>
 </div>
 </div></blockquote>
@@ -125,23 +96,60 @@
           </div>
         </div>
       </div>
-      <div class="clearer"></div>
+        </div>
+        <div class="sidebar">
+          <h3>目次</h3>
+          <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="machine-learning.html">機械学習</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">KMeans</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">アルゴリズム</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">数式表現</a></li>
+</ul>
+</li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">検索</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="検索" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>ナビゲーション</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="総合索引"
-             >索引</a></li>
-        <li class="right" >
-          <a href="machine-learning.html" title="機械学習"
-             >前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">clustering_practice  ドキュメント</a> &#187;</li> 
-      </ul>
-    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="machine-learning.html" title="機械学習"
+              >前へ</a> |
+            <a href="genindex.html" title="総合索引"
+              >索引</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/k-means.rst.txt"
+                rel="nofollow">ソースコードを表示</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, https://github.com/daring-board.
-      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4 で生成しました。
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5 で生成しました。
     </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
   </body>
 </html>
