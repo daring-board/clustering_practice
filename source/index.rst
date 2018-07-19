@@ -12,6 +12,7 @@
 
    machine-learning
    k-means
+   colaboratory
 
 Indices and tables
 ==================
