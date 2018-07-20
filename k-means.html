@@ -17,6 +17,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="Google Colaboratoryについて" href="colaboratory.html" />
     <link rel="prev" title="機械学習" href="machine-learning.html" /> 
   </head><body>
     <div class="header-wrapper" role="banner">
@@ -26,6 +27,8 @@
         <div class="rel" role="navigation" aria-label="related navigation">
           <a href="machine-learning.html" title="機械学習"
              accesskey="P">前へ</a> |
+          <a href="colaboratory.html" title="Google Colaboratoryについて"
+             accesskey="N">次へ</a> |
           <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a>
         </div>
@@ -55,7 +58,7 @@
 <h2>アルゴリズム<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
-<div class="line">KMeansは、各クラスタ内のデータ点とクラスタ内のデータの平均値との距離を最小化することで</div>
+<div class="line">KMeansは、すべての入力データ点とクラスタの重心との距離を最小化することで</div>
 <div class="line">凝集したデータ点の集まりを一つのクラスタとして、分割するアルゴリズムである。</div>
 <div class="line">KMeansでは、クラスタに分割する個数を予め決めておく必要がある。</div>
 <div class="line">アルゴリズムの動作は以下である。</div>
@@ -82,13 +85,56 @@
 <blockquote>
 <div><div class="line-block">
 <div class="line">以下に、KMmeansアルゴリズムの数式表現を示す。</div>
-<div class="line"><span class="math notranslate nohighlight">\(x\)</span> : 入力データ</div>
-<div class="line"><span class="math notranslate nohighlight">\(y\)</span> : クラスタラベル</div>
-<div class="line"><span class="math notranslate nohighlight">\(\theta = \{ \mu_j | j \in [K] \}\)</span> : モデルパラメータ(各クラスタの重心の集合)</div>
+</div>
+</div></blockquote>
+<div class="section" id="id4">
+<h3>モデル式<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">KMeansモデルによって出力データを予測する式。</div>
 </div>
 <div class="math notranslate nohighlight">
-\[y = f(x; \theta) =  arg min \{ (x - \mu)^2 | \mu \in \theta \}\]</div>
+\[y = arg min_{j \in [K]} \{ (x - \mu_j)^2 | \mu_j \in \theta \}\]</div>
+<div class="line-block">
+<div class="line">読み方：</div>
+<div class="line">　パラメータ集合 <span class="math notranslate nohighlight">\(\theta\)</span> に含まれるすべての重心点 <span class="math notranslate nohighlight">\(\mu_j\)</span> に対して、</div>
+<div class="line">　入力データ <span class="math notranslate nohighlight">\(x\)</span> との距離が最小の重心点 <span class="math notranslate nohighlight">\(\mu_j\)</span> のインデックス <span class="math notranslate nohighlight">\(j\)</span> を</div>
+<div class="line">　出力データ <span class="math notranslate nohighlight">\(y\)</span> として返却する。</div>
+</div>
 </div></blockquote>
+</div>
+<div class="section" id="id5">
+<h3>学習パラメータ更新式<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">KMeansモデルがパラメータを学習するための更新式。</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\mu_k = \frac{\sum_{n=1}^{N}r_{nk}x_n}{\sum_{n=1}^{N}r_{nk}} = \frac{\sum_n x_n}{n_k}\]</div>
+<div class="line-block">
+<div class="line">これは <span class="math notranslate nohighlight">\(\mu_k\)</span> はクラスタ内に含まれる入力データの平均値として更新されることを表している。</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h3>更新式の導出<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">KMeansは、すべての入力データ点とクラスタの重心との距離を最小化するので、</div>
+<div class="line">以下の数式を微分したものが上の更新式となる。</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\sum_{n=1}^{N} \sum_{k=1}^{K}r_{nk}(x_n-\mu_k)^2\]</div>
+<div class="line-block">
+<div class="line"><span class="math notranslate nohighlight">\(r_{nk}\)</span> はデータ <span class="math notranslate nohighlight">\(x_n\)</span> がクラスタ <span class="math notranslate nohighlight">\(k\)</span> に属するとき1で、それ以外の場合は0とする。</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}r_{nk} = \begin{cases}
+  1 &amp; (k = arg min_{j \in [K]} \{ (x - \mu_j)^2 | \mu_j \in \theta \}) \\
+  0 &amp; (otherwise)
+\end{cases}\end{split}\]</div>
+</div></blockquote>
+</div>
 </div>
 </div>
 
@@ -108,6 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id3">数式表現</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="colaboratory.html">Google Colaboratoryについて</a></li>
 </ul>
 
           <div role="search">
@@ -130,6 +177,8 @@
           <div role="navigation" aria-label="related navigaton">
             <a href="machine-learning.html" title="機械学習"
               >前へ</a> |
+            <a href="colaboratory.html" title="Google Colaboratoryについて"
+              >次へ</a> |
             <a href="genindex.html" title="総合索引"
               >索引</a>
           </div>
