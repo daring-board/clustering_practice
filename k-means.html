@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>KMeans &#8212; clustering_practice  ドキュメント</title>
-    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
@@ -20,25 +20,23 @@
     <link rel="next" title="Google Colaboratoryについて" href="colaboratory.html" />
     <link rel="prev" title="機械学習" href="machine-learning.html" /> 
   </head><body>
-    <div class="header-wrapper" role="banner">
-      <div class="header">
-        <div class="headertitle"><a
-          href="index.html">clustering_practice  ドキュメント</a></div>
-        <div class="rel" role="navigation" aria-label="related navigation">
-          <a href="machine-learning.html" title="機械学習"
-             accesskey="P">前へ</a> |
-          <a href="colaboratory.html" title="Google Colaboratoryについて"
-             accesskey="N">次へ</a> |
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="総合索引"
-             accesskey="I">索引</a>
-        </div>
-       </div>
-    </div>
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="colaboratory.html" title="Google Colaboratoryについて"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="machine-learning.html" title="機械学習"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">clustering_practice  ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>  
 
-    <div class="content-wrapper">
-      <div class="content">
-        <div class="document">
-            
+    <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
@@ -47,6 +45,8 @@
 </div>
 <div class="section" id="kmeans">
 <h1>KMeans<a class="headerlink" href="#kmeans" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id1">
+<h2>KMeansとは<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">KMeansはクラスタリングアルゴリズムであり、教師なし学習に分類される。</div>
@@ -54,8 +54,9 @@
 <div class="line">２種類があり、KMeansは非階層型クラスタリングである。</div>
 </div>
 </div></blockquote>
-<div class="section" id="id1">
-<h2>アルゴリズム<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="id2">
+<h2>アルゴリズム<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">KMeansは、すべての入力データ点とクラスタの重心との距離を最小化することで</div>
@@ -71,8 +72,8 @@
 </ol>
 </div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2>例<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id3">
+<h2>例<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">PythonによるKMeansの実行例。</div>
@@ -80,15 +81,24 @@
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id3">
-<h2>数式表現<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id4">
+<h2>実データへの適用<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">カメラのデータをKMeansにより分類する。</div>
+<div class="line"><a class="reference external" href="https://github.com/daring-board/clustering_practice/blob/master/CameraDataClustering.ipynb">https://github.com/daring-board/clustering_practice/blob/master/CameraDataClustering.ipynb</a></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h2>数式表現<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">以下に、KMmeansアルゴリズムの数式表現を示す。</div>
 </div>
 </div></blockquote>
-<div class="section" id="id4">
-<h3>モデル式<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id6">
+<h3>モデル式<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">KMeansモデルによって出力データを予測する式。</div>
@@ -103,29 +113,19 @@
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id5">
-<h3>学習パラメータ更新式<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id7">
+<h3>学習パラメータ更新式<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">KMeansモデルがパラメータを学習するための更新式。</div>
 </div>
 <div class="math notranslate nohighlight">
-\[\mu_k = \frac{\sum_{n=1}^{N}r_{nk}x_n}{\sum_{n=1}^{N}r_{nk}} = \frac{\sum_n x_n}{n_k}\]</div>
+\[\mu_k = \frac{\sum_{n=1}^{N}r_{nk}x_n}{\sum_{n=1}^{N}r_{nk}} = \frac{\sum_{x_n \in C_k} x_n}{N_k}\]</div>
 <div class="line-block">
 <div class="line">これは <span class="math notranslate nohighlight">\(\mu_k\)</span> はクラスタ内に含まれる入力データの平均値として更新されることを表している。</div>
 </div>
-</div></blockquote>
-</div>
-<div class="section" id="id6">
-<h3>更新式の導出<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<blockquote>
-<div><div class="line-block">
-<div class="line">KMeansは、すべての入力データ点とクラスタの重心との距離を最小化するので、</div>
-<div class="line">以下の数式を微分したものが上の更新式となる。</div>
-</div>
-<div class="math notranslate nohighlight">
-\[\sum_{n=1}^{N} \sum_{k=1}^{K}r_{nk}(x_n-\mu_k)^2\]</div>
 <div class="line-block">
+<div class="line"><span class="math notranslate nohighlight">\(N_k\)</span> はクラスタ <span class="math notranslate nohighlight">\(C_k\)</span> に含まれる入力データの個数。</div>
 <div class="line"><span class="math notranslate nohighlight">\(r_{nk}\)</span> はデータ <span class="math notranslate nohighlight">\(x_n\)</span> がクラスタ <span class="math notranslate nohighlight">\(k\)</span> に属するとき1で、それ以外の場合は0とする。</div>
 </div>
 <div class="math notranslate nohighlight">
@@ -135,6 +135,17 @@
 \end{cases}\end{split}\]</div>
 </div></blockquote>
 </div>
+<div class="section" id="id8">
+<h3>更新式の導出<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">KMeansは、すべての入力データ点とクラスタの重心との距離を最小化するので、</div>
+<div class="line">以下の数式を微分したものが上の更新式となる。</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\sum_{n=1}^{N} \sum_{k=1}^{K}r_{nk}(x_n-\mu_k)^2\]</div>
+</div></blockquote>
+</div>
 </div>
 </div>
 
@@ -142,63 +153,72 @@
           </div>
         </div>
       </div>
-        </div>
-        <div class="sidebar">
-          <h3>目次</h3>
-          <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="machine-learning.html">機械学習</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">KMeans</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">アルゴリズム</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">数式表現</a></li>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">KMeans</a><ul>
+<li><a class="reference internal" href="#id1">KMeansとは</a></li>
+<li><a class="reference internal" href="#id2">アルゴリズム</a></li>
+<li><a class="reference internal" href="#id3">例</a></li>
+<li><a class="reference internal" href="#id4">実データへの適用</a></li>
+<li><a class="reference internal" href="#id5">数式表現</a><ul>
+<li><a class="reference internal" href="#id6">モデル式</a></li>
+<li><a class="reference internal" href="#id7">学習パラメータ更新式</a></li>
+<li><a class="reference internal" href="#id8">更新式の導出</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="colaboratory.html">Google Colaboratoryについて</a></li>
+</ul>
+</li>
 </ul>
 
-          <div role="search">
-            <h3 style="margin-top: 1.5em;">検索</h3>
-            <form class="search" action="search.html" method="get">
-                <input type="text" name="q" />
-                <input type="submit" value="検索" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-            </form>
-          </div>
-        </div>
-        <div class="clearer"></div>
-      </div>
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="machine-learning.html"
+                        title="前の章へ">機械学習</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="colaboratory.html"
+                        title="次の章へ">Google Colaboratoryについて</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/k-means.rst.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
     </div>
-
-    <div class="footer-wrapper">
-      <div class="footer">
-        <div class="left">
-          <div role="navigation" aria-label="related navigaton">
-            <a href="machine-learning.html" title="機械学習"
-              >前へ</a> |
-            <a href="colaboratory.html" title="Google Colaboratoryについて"
-              >次へ</a> |
-            <a href="genindex.html" title="総合索引"
-              >索引</a>
-          </div>
-          <div role="note" aria-label="source link">
-              <br/>
-              <a href="_sources/k-means.rst.txt"
-                rel="nofollow">ソースコードを表示</a>
-          </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
-
-        <div class="right">
-          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="colaboratory.html" title="Google Colaboratoryについて"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="machine-learning.html" title="機械学習"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">clustering_practice  ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, https://github.com/daring-board.
       このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5 で生成しました。
     </div>
-        </div>
-        <div class="clearer"></div>
-      </div>
-    </div>
-
   </body>
 </html>

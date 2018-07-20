@@ -6,7 +6,9 @@
 Google Colaboratoryについて
 ==================================
 
-  | Google Colaboratoryとは、
+Google Colaboratoryとは
+------------------------------
+
   | Googleが機械学習の教育や研究用に提供しているツールで、
   | Pythonの実行環境が無償で使用可能である。
   | Pythonでの機械学習にもちられるライブラリ(numpy, pandas, matplotlib)が

@@ -5,6 +5,10 @@
 
 KMeans
 ========================
+
+KMeansとは
+-------------------
+
   | KMeansはクラスタリングアルゴリズムであり、教師なし学習に分類される。
   | クラスタリングアルゴリズムは、階層型クラスタリングと非階層型クラスタリングの
   | ２種類があり、KMeansは非階層型クラスタリングである。
@@ -25,6 +29,12 @@ KMeans
 -----
   | PythonによるKMeansの実行例。
   | https://github.com/daring-board/clustering_practice/blob/master/KMeans.ipynb
+
+実データへの適用
+--------------------------
+  | カメラのデータをKMeansにより分類する。
+  | https://github.com/daring-board/clustering_practice/blob/master/CameraDataClustering.ipynb
+
 
 数式表現
 --------------------
@@ -50,9 +60,19 @@ KMeans
 
   .. math::
 
-    \mu_k = \frac{\sum_{n=1}^{N}r_{nk}x_n}{\sum_{n=1}^{N}r_{nk}} = \frac{\sum_n x_n}{n_k}
+    \mu_k = \frac{\sum_{n=1}^{N}r_{nk}x_n}{\sum_{n=1}^{N}r_{nk}} = \frac{\sum_{x_n \in C_k} x_n}{N_k}
 
   | これは :math:`\mu_k` はクラスタ内に含まれる入力データの平均値として更新されることを表している。
+
+  | :math:`N_k` はクラスタ :math:`C_k` に含まれる入力データの個数。
+  | :math:`r_{nk}` はデータ :math:`x_n` がクラスタ :math:`k` に属するとき1で、それ以外の場合は0とする。
+
+  .. math::
+
+    r_{nk} = \begin{cases}
+      1 & (k = arg min_{j \in [K]} \{ (x - \mu_j)^2 | \mu_j \in \theta \}) \\
+      0 & (otherwise)
+    \end{cases}
 
 更新式の導出
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -63,12 +83,3 @@ KMeans
   .. math::
 
     \sum_{n=1}^{N} \sum_{k=1}^{K}r_{nk}(x_n-\mu_k)^2
-
-  | :math:`r_{nk}` はデータ :math:`x_n` がクラスタ :math:`k` に属するとき1で、それ以外の場合は0とする。
-
-  .. math::
-
-    r_{nk} = \begin{cases}
-      1 & (k = arg min_{j \in [K]} \{ (x - \mu_j)^2 | \mu_j \in \theta \}) \\
-      0 & (otherwise)
-    \end{cases}
