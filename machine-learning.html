@@ -9,7 +9,7 @@
     <title>機械学習 &#8212; clustering_practice  ドキュメント</title>
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -62,8 +62,11 @@
 <div class="line-block">
 <div class="line">モデル <span class="math notranslate nohighlight">\(f\)</span> のパラメータ <span class="math notranslate nohighlight">\(\theta\)</span> を求める事を <strong>学習</strong> という。</div>
 <div class="line">入力データ <span class="math notranslate nohighlight">\(x\)</span> に対して、学習後のパラメータ <span class="math notranslate nohighlight">\(\theta\)</span>　を用いて <span class="math notranslate nohighlight">\(y\)</span> を出力する事を <strong>予測</strong> (推論)という。</div>
-<div class="line">機械学習は、教師あり学習と教師なし学習、強化学習の3つに分類される。</div>
+<div class="line"><br /></div>
+<div class="line">機械学習は、</div>
+<div class="line">教師あり学習(supervised)と教師なし学習(Unsupervised)、強化学習(Reinforcement)の3つに分類される。</div>
 </div>
+<a class="reference internal image-reference" href="_images/concept.png"><img alt="_images/concept.png" src="_images/concept.png" style="width: 512.0px; height: 449.0px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="id3">
@@ -73,8 +76,13 @@
 <div class="line">入力データ <span class="math notranslate nohighlight">\(x\)</span> と 結果データ <span class="math notranslate nohighlight">\(y\)</span> の組を学習データとして、</div>
 <div class="line">モデル <span class="math notranslate nohighlight">\(f\)</span> のパラメータを求める(推定する)学習方法である。</div>
 </div>
+<a class="reference internal image-reference" href="_images/supervised.png"><img alt="_images/supervised.png" src="_images/supervised.png" style="width: 466.0px; height: 409.0px;" /></a>
 <div class="line-block">
-<div class="line">教師あり学習では、入力データと対になる正解データが必須となる。</div>
+<div class="line"><a class="reference external" href="http://kazoo04.hatenablog.com/entry/agi-ac-13">http://kazoo04.hatenablog.com/entry/agi-ac-13</a></div>
+</div>
+<div class="line-block">
+<div class="line">教師あり学習では、入力データと対になる教師データが必須となる。</div>
+<div class="line">回帰(スコアリング)・分類(クラシフィケーション)などが教師あり学習である。</div>
 </div>
 </div></blockquote>
 </div>
@@ -86,8 +94,20 @@
 <div class="line">パラメータを求める(推定する)学習方法である。</div>
 </div>
 <div class="line-block">
+<div class="line">学習データ</div>
+</div>
+<a class="reference internal image-reference" href="_images/unsupervised1.png"><img alt="_images/unsupervised1.png" src="_images/unsupervised1.png" style="width: 171.0px; height: 171.0px;" /></a>
+<div class="line-block">
+<div class="line">出力結果の例</div>
+</div>
+<a class="reference internal image-reference" href="_images/unsupervised2.png"><img alt="_images/unsupervised2.png" src="_images/unsupervised2.png" style="width: 525.0px; height: 490.0px;" /></a>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://kazoo04.hatenablog.com/entry/agi-ac-12">http://kazoo04.hatenablog.com/entry/agi-ac-12</a></div>
+</div>
+<div class="line-block">
 <div class="line">教師なし学習では、教師あり学習のような正解データは必要ないが、</div>
 <div class="line">尤もらしい結果とは何かを検討する必要がある。</div>
+<div class="line">クラスタリング・アソシエーション分析などが教師なし学習である。</div>
 </div>
 </div></blockquote>
 </div>
@@ -96,8 +116,20 @@
 <blockquote>
 <div><div class="line-block">
 <div class="line">入力データ <span class="math notranslate nohighlight">\(x\)</span> を状態 <span class="math notranslate nohighlight">\(s\)</span> と行動 <span class="math notranslate nohighlight">\(a\)</span> の組 <span class="math notranslate nohighlight">\(x = (s, a)\)</span> として、</div>
-<div class="line">ある目的に対して、価値 <span class="math notranslate nohighlight">\(y\)</span> を与えるモデルとして <span class="math notranslate nohighlight">\(f\)</span> の</div>
+<div class="line">ある目的に対して、報酬 <span class="math notranslate nohighlight">\(y\)</span> を与えるモデルとして <span class="math notranslate nohighlight">\(f\)</span> の</div>
 <div class="line">パラメータを求める(推定する)学習方法である。</div>
+</div>
+<a class="reference internal image-reference" href="_images/rl-problem.jpg"><img alt="_images/rl-problem.jpg" src="_images/rl-problem.jpg" style="width: 680.0px; height: 280.0px;" /></a>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://deepage.net/machine_learning/2017/08/10/reinforcement-learning.html">https://deepage.net/machine_learning/2017/08/10/reinforcement-learning.html</a></div>
+</div>
+<div class="line-block">
+<div class="line">例えば、</div>
+<div class="line">株価の値を環境 <strong>状態</strong> とみなし、株価が上がったタイミングで売るという <strong>行動</strong> を</div>
+<div class="line">取ったときに得られた利益を <strong>報酬</strong> とする事で強化学習をさせる事ができる。</div>
+<div class="line">囲碁AI AlphaGoや自動運転に応用されている。</div>
+<div class="line">AlphaGo：<a class="reference external" href="https://deepmind.com/research/alphago/">https://deepmind.com/research/alphago/</a></div>
+<div class="line">自動運転：<a class="reference external" href="https://www.youtube.com/watch?time_continue=1&amp;v=eRwTbRtnT1I">https://www.youtube.com/watch?time_continue=1&amp;v=eRwTbRtnT1I</a></div>
 </div>
 </div></blockquote>
 </div>
@@ -186,7 +218,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, https://github.com/daring-board.
-      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5 で生成しました。
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4 で生成しました。
     </div>
   </body>
 </html>
