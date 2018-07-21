@@ -1,4 +1,4 @@
 *pynb_checkpoints/*
 */html/*
 *build/*
-*.csv
+./*.csv
