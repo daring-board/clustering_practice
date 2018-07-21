@@ -13,6 +13,20 @@ KMeansとは
   | クラスタリングアルゴリズムは、階層型クラスタリングと非階層型クラスタリングの
   | ２種類があり、KMeansは非階層型クラスタリングである。
 
+  | 階層型クラスタリング
+
+  .. image:: ./img/layered_clustering.jpg
+      :scale: 100%
+
+  | https://www.albert2005.co.jp/knowledge/data_mining/cluster/hierarchical_clustering
+
+  | 非階層型クラスタリング
+
+  .. image:: ./img/kmeans.png
+      :scale: 100%
+
+  | https://pythondatascience.plavox.info/scikit-learn/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E5%88%86%E6%9E%90-k-means
+
 アルゴリズム
 -------------------
   | KMeansは、すべての入力データ点とクラスタの重心との距離を最小化することで

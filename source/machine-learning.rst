@@ -23,28 +23,64 @@
 
   | モデル :math:`f` のパラメータ :math:`\theta` を求める事を **学習** という。
   | 入力データ :math:`x` に対して、学習後のパラメータ :math:`\theta`　を用いて :math:`y` を出力する事を **予測** (推論)という。
-  | 機械学習は、教師あり学習と教師なし学習、強化学習の3つに分類される。
+  |
+  | 機械学習は、
+  | 教師あり学習(supervised)と教師なし学習(Unsupervised)、強化学習(Reinforcement)の3つに分類される。
+
+  .. image:: ./img/concept.png
+      :scale: 50%
 
 教師あり学習とは
 ---------------------
   | 入力データ :math:`x` と 結果データ :math:`y` の組を学習データとして、
   | モデル :math:`f` のパラメータを求める(推定する)学習方法である。
 
-  | 教師あり学習では、入力データと対になる正解データが必須となる。
+  .. image:: ./img/supervised.png
+      :scale: 100%
+
+  | http://kazoo04.hatenablog.com/entry/agi-ac-13
+
+  | 教師あり学習では、入力データと対になる教師データが必須となる。
+  | 回帰(スコアリング)・分類(クラシフィケーション)などが教師あり学習である。
 
 教師なし学習とは
 ---------------------
   | 入力データ :math:`x` のみを学習データとして、尤もらしい結果を返すためのモデル :math:`f` の
   | パラメータを求める(推定する)学習方法である。
 
+  | 学習データ
+
+  .. image:: ./img/unsupervised1.png
+      :scale: 100%
+
+  | 出力結果の例
+
+  .. image:: ./img/unsupervised2.png
+      :scale: 100%
+
+  | http://kazoo04.hatenablog.com/entry/agi-ac-12
+
   | 教師なし学習では、教師あり学習のような正解データは必要ないが、
   | 尤もらしい結果とは何かを検討する必要がある。
+  | クラスタリング・アソシエーション分析などが教師なし学習である。
 
 強化学習とは
 ---------------------
   | 入力データ :math:`x` を状態 :math:`s` と行動 :math:`a` の組 :math:`x = (s, a)` として、
-  | ある目的に対して、価値 :math:`y` を与えるモデルとして :math:`f` の
+  | ある目的に対して、報酬 :math:`y` を与えるモデルとして :math:`f` の
   | パラメータを求める(推定する)学習方法である。
+
+  .. image:: ./img/rl-problem.jpg
+      :scale: 100%
+
+  | https://deepage.net/machine_learning/2017/08/10/reinforcement-learning.html
+
+  | 例えば、
+  | 株価の値を環境 **状態** とみなし、株価が上がったタイミングで売るという **行動** を
+  | 取ったときに得られた利益を **報酬** とする事で強化学習をさせる事ができる。
+  | 囲碁AI AlphaGoや自動運転に応用されている。
+  | AlphaGo：https://deepmind.com/research/alphago/
+  | 自動運転：https://www.youtube.com/watch?time_continue=1&v=eRwTbRtnT1I
 
 機械学習の適用について
 ---------------------------
